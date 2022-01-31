@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.fullscreen {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+nav {
+    position: relative;
+    height: 100vh;
+    width: 10vw;
+    background-color: #1e3190;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    box-sizing: border-box;
+    padding-top: 20vh;
+}
