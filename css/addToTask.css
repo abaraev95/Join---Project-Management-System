@@ -79,17 +79,115 @@ table input, select, textarea {
     border: 1px solid grey;
     font-size: 16px;
     padding: 8px;
+    box-sizing: border-box;
 }
+
 
 textarea {
     height: 12vh !important;
 }
 
 #select-date {
-    opacity: 1;
-    background-image: url(../img/icons8-calendar-150.png);
-    background-position: right;
-    background-repeat: no-repeat;
-    z-index: 1;
+    background: url(../img/icons8-calendar-150.png) no-repeat right white;
+    background-position-x: 26vw;
 }
+
+::-webkit-calendar-picker-indicator{
+    width: 4vw;
+    height: 7vh;
+    border-left: 5px solid black !important;
+    opacity: 0;
+}
+
+#assigned-to-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#assigned-to-container img {
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    box-sizing: border-box;
+}
+
+.highlight-selected-user {
+    border: 5px solid #1e3190;
+}
+
+.assigned-to-buttons {
+    position: absolute;
+    bottom: 13vh;
+    right: 17vw;
+    
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 12px;
+}
+
+#cancel-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+#create-task-button {
+    margin-left: 5vw;
+    background-color: #1e3190;
+    color: white;
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#selected-user {
+    display: none;
+}
+
+.clear-all-inputs {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    z-index: 99;
+    background-color: rgba(30, 49, 144, 0.8);
+    border-radius: 8px;
+}
+
+.clear-all-inputs span {
+    color: white !important;
+    font-size: 24px;
+}
+
+.clear-all-inputs button {
+    width: 120px;
+    background-color: white;
+    color: #1e3190;
+    font-weight: bold;
+}
+
+.flex-direction-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
 
