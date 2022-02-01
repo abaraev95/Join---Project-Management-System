@@ -75,6 +75,11 @@ body {
     border: 2px solid grey;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 225ms ease-in-out;
+}
+
+#login-form-submit:hover {
+    background-color: rgb(61, 81, 180);
 }
 
 .row {
@@ -89,6 +94,7 @@ body {
 .row a {
     color: white;
     text-decoration: none;
+    font-style: italic;
 }
 
 .row a:hover {
