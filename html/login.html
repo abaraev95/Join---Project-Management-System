@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Join</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="login-bg">
         <div class="login-container">
@@ -15,10 +21,20 @@
             </div>
             <form id="login-form">
                 <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+                <input type="password" name="password" id="password-field" class="login-form-field"
+                    placeholder="Password">
                 <input type="submit" value="LOGIN" id="login-form-submit">
-              </form>
+                <div class="row">
+                    <div>
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                
+            </form>
         </div>
     </div>
 </body>
+
 </html>
