@@ -31,65 +31,65 @@
             <span>Learning Management System Project</span>
 
             <div class="content-container">
+                <form onsubmit="createTask()">
+                    <table>
+                        <tr>
+                            <td>TITLE</td>
+                            <td>DUE DATE</td>
+                        </tr>
+                        <tr>
+                            <td><input id="taskTitle" type="text" placeholder="Write a title..." required></td>
+                            <td><input id="select-date" type="date" required></td>
+                        </tr>
+                        <tr>
+                            <td>CATEGORY</td>
+                            <td>URGENCY</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="category">
+                                    <option>Management</option>
+                                    <option>Purchasing</option>
+                                    <option>Controlling</option>
+                                    <option>R&D</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select id="urgency">
+                                    <option>Low</option>
+                                    <option>Middle</option>
+                                    <option>High</option>
+                                    <option>Very High</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DESCRIPTION</td>
+                            <td>ASSIGNED TO</td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="textarea" placeholder="Describe your task..." required></textarea></td>
+                            <td>
+                                <div id="assigned-to-container">
 
-                <table>
-                    <tr>
-                        <td>TITLE</td>
-                        <td>DUE DATE</td>
-                    </tr>
-                    <tr>
-                        <td><input id="taskTitle" type="text" placeholder="Write a title..." required></td>
-                        <td><input id="select-date" type="date" required></td>
-                    </tr>
-                    <tr>
-                        <td>CATEGORY</td>
-                        <td>URGENCY</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select id="category">
-                                <option>Management</option>
-                                <option>Purchasing</option>
-                                <option>Controlling</option>
-                                <option>R&D</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="urgency">
-                                <option>Low</option>
-                                <option>Middle</option>
-                                <option>High</option>
-                                <option>Very High</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>DESCRIPTION</td>
-                        <td>ASSIGNED TO</td>
-                    </tr>
-                    <tr>
-                        <td><textarea id="textarea" placeholder="Describe your task..." required></textarea></td>
-                        <td>
-                            <div id="assigned-to-container">
-
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <div class="assigned-to-buttons">
-                    <button id="cancel-button" onclick="cancelCommand()">CANCEL</button>
-                    <button id="create-task-button" onclick="createTask()">CREATE TASK</button>
-                    <input id="selected-user">
-                </div>
-
-                <div id="clearPopup" class="clear-all-inputs">
-                    <span>Clear all?</span>
-                    <div class="flex-direction-row">
-                        <button onclick="clearAll()">YES</button>
-                        <button onclick="noClearing()">NO</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="assigned-to-buttons">
+                        <button id="cancel-button" onclick="cancelCommand()">CANCEL</button>
+                        <input id="create-task-button" type="submit" value="CREATE TASK">
+                        <input id="selected-user">
                     </div>
-                </div>
 
+                    <div id="clearPopup" class="clear-all-inputs">
+                        <span>Clear all?</span>
+                        <div class="flex-direction-row">
+                            <button onclick="clearAll()">YES</button>
+                            <button onclick="noClearing()">NO</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
