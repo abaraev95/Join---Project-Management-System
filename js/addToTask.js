@@ -1,5 +1,4 @@
-let users = [
-    {
+let users = [{
         'userName': 'Alex',
         'userImage': '../img/logo.png'
     },
@@ -9,7 +8,7 @@ let users = [
     },
     {
         'userName': 'Georg',
-        'userImage': '../img/Backlog.PNG'
+        'userImage': '../img/georg.jpg'
     }
 ];
 
@@ -43,13 +42,13 @@ function assignedToUser(username, index) {
     highlightSelectedUser(index);
 }
 
-function highlightSelectedUser(index){
+function highlightSelectedUser(index) {
     deleteAllHighlights();
     document.getElementById('user-id-' + index).classList.add('highlight-selected-user');
 }
 
 function deleteAllHighlights() {
-    for(let i = 0; i < users.length; i++) {
+    for (let i = 0; i < users.length; i++) {
         document.getElementById('user-id-' + i).classList.remove('highlight-selected-user');
     }
 }
@@ -101,6 +100,3 @@ function createTask() {
     deleteAllHighlights();
 
 }
-
-
-
