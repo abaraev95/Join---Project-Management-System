@@ -52,15 +52,14 @@ main {
 .userimg img {
     box-sizing: border-box;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     padding: 2px;
 }
 
 .userinfo {
     padding: 4px;
-    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
