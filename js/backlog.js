@@ -1,6 +1,6 @@
 let backlogArray = [{
         'color': 'green',
-        'userimg': './img/user/georg.jpg',
+        'userimg': '../img/georg.jpg',
         'username': 'Georg Straßberger',
         'useremail': 'georg.strassberger@gmail.com',
         'category': 'Marketing',
@@ -12,7 +12,7 @@ let backlogArray = [{
         'username': 'Max Mustermann',
         'useremail': 'm.maustermann@gmail.com',
         'category': 'Sale',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
     },
     {
         'color': 'yellow',
@@ -20,7 +20,7 @@ let backlogArray = [{
         'username': 'Hans P. Bexter',
         'useremail': 'hp.bexter@gmx.de',
         'category': 'Design',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
     },
     {
         'color': 'blue',
@@ -28,7 +28,7 @@ let backlogArray = [{
         'username': 'Julia Nurso',
         'useremail': 'julia.nurso@hotmail.de',
         'category': 'Product',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
     }
 ];
 
