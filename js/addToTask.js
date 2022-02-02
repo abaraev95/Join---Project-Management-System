@@ -13,9 +13,9 @@ let users = [
     }
 ];
 
-let allTasks = [];
+let backlogTasks = [];
 
-let plusButton = '../img/icon plus.png'
+let plusButton = '../img/icon plus.png';
 
 function loadUsers() {
     let assignedUsers = document.getElementById('assigned-to-container');
@@ -28,9 +28,12 @@ function loadUsers() {
             </div>
         `;
     }
+
+    /*  PLUS BUTTON
     assignedUsers.innerHTML += `
         <img src='${plusButton}'>
     `;
+    */
 }
 
 function assignedToUser(username, index) {
@@ -63,8 +66,9 @@ function clearAll() {
     document.getElementById('select-date').value = '';
     document.getElementById('textarea').value = '';
     document.getElementById('selected-user').value = '';
+    document.getElementById('category').value = 'Management';
+    document.getElementById('urgency').value = 'Low';
     deleteAllHighlights();
-
     document.getElementById('clearPopup').style = 'display: none;'
 
 }
@@ -92,7 +96,7 @@ function createTask() {
         'assignedTo': selectedUser
     };
 
-    allTasks.push(task);
+    backlogTasks.push(task);
     clearAll();
     deleteAllHighlights();
 

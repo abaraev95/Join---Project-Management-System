@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.login-bg {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(221, 221, 245); 
+}
+
+.login-container {
+    position: relative;
+    height: 300px;
+    width: 500px;
+    background-color: rgb(30, 49, 144);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.login-logo {
+    position: absolute;
+    top: -84px;
+    left: calc(250 - 82px);
+    background-color: rgba(30, 49, 144, 1);
+    padding: 30px;
+    border-radius: 50%;
+    border: 2px solid grey;
+}
+
+.login-logo img {
+    height: 100px;
+    width: 100px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 30px;
+}
+
+#username-field, #password-field {
+    box-sizing: border-box;
+    width: 400px;
+    height: 50px;
+    padding-left: 60px;
+    border-radius: 4px;
+}
+
+#username-field {
+    background: url(../img/user-4-32.png) no-repeat left white;
+    background-position-x: 10px;
+}
+
+#password-field {
+    background: url(../img/key-32.png) no-repeat left white;
+    background-position-x: 10px;
+}
+
+
+#login-form-submit {
+    position: absolute;
+    height: 60px;
+    width: 270px;
+    bottom: -30px;
+    left: calc(250px - 135px);
+    background-color: rgba(30, 49, 144, 1);
+    color: white;
+    font-size: 24px;
+    border: 2px solid grey;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 225ms ease-in-out;
+}
+
+#login-form-submit:hover {
+    background-color: rgb(61, 81, 180);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:400px;
+    color: white; 
+}
+
+.row a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.row a:hover {
+    text-decoration: underline;
+}
