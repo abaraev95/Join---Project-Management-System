@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/board.css">
-    <script src="../js/board.js"></script>
-    <script src="../js/addToTask.js"></script>
+    <script type ="text/javascript" src="../js/testboard.js"></script>
 
     <title>Document</title>
 </head>
 
-<body>
+<body onload="loadPins()">
 
     <div class="fullscreen">
         <nav>
@@ -27,21 +26,17 @@
     <div class="main_container">
         <div class="post_container">
 
-            <div class="postIt">
-                <span>TO DO</span>
-                <div id="toDo"></div>
+            <div id="toDo" class="postIt">
+                <span id="posttitel">TO DO</span>
             </div>
-            <div class="postIt">
-                <span>IN PROGRESS</span>
-                <div id="inProgress"></div>
+            <div id="inProgress" class="postIt">
+                <span id="posttitel">IN PROGRESS</span>
             </div>
-            <div class="postIt">
-                <span>TESTING</span>
-                <div id="testing"></div>
+            <div id="testing" class="postIt">
+                <span id="posttitel">TESTING</span>
             </div>
-            <div class="postIt">
-                <span>DONE</span>
-                <div id="done"></div>
+            <div id="done" class="postIt">
+                <span id="posttitel">DONE</span>
             </div>
         </div>
     </div>

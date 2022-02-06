@@ -36,8 +36,7 @@ nav a {
 }
 
 .postIt {
-    display: flex;
-    background-color: rgba(180, 180, 180, 0.699);
+    background-color: rgb(221, 221, 245);
     width: 300px;
     border: solid 1px black;
     border-radius: 10px;
@@ -45,7 +44,7 @@ nav a {
     margin: 30px;
 }
 
-.postIt span {
+.posttitel {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,4 +69,24 @@ nav a {
     left: 10vw;
     right: 0;
     bottom: 0;
+}
+
+.pinContainer {
+    display: flex;
+    width: 100%;
+    height: 300px;
+}
+
+.pinNames {
+    display: flex;
+}
+
+.pinInfo {
+    display: flex;
+}
+
+.pinInfo img {
+    width: 60px;
+    height: 60px;
+    margin-left: 12px;
 }
