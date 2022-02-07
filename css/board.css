@@ -37,11 +37,22 @@ nav a {
 
 .postIt {
     background-color: rgb(221, 221, 245);
-    width: 300px;
+    width: 400px;
     border: solid 1px black;
     border-radius: 10px;
     text-align: center;
     margin: 30px;
+}
+
+.generic_term {
+    height: 50px;
+    width: 100%;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .posttitel {
@@ -75,18 +86,30 @@ nav a {
     display: flex;
     width: 100%;
     height: 300px;
-}
 
-.pinNames {
-    display: flex;
-}
-
-.pinInfo {
-    display: flex;
 }
 
 .pinInfo img {
     width: 60px;
     height: 60px;
     margin-left: 12px;
+    border-radius: 100%;
+}
+
+.pinNames {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: lightgray;
+}
+
+.pinInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: lightgray;
+    margin: 0px 6px 10px 9px;
 }
