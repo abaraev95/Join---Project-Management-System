@@ -27,19 +27,19 @@
         <div class="post_container">
             <div class="postIt">
                 <span class="generic_term" id="posttitel">TO DO</span>
-                <div id="toDo"></div>
+                <div class="dropArea" ondrop="drop('toDo')" ondragleave="removeHightlight('toDo')" ondragover="allowDrop(event); hightlight('toDo')" id="toDo"></div>
             </div>
             <div class="postIt">
                 <span class="generic_term" id="posttitel">IN PROGRESS</span>
-                <div id="inProgress"></div>
+                <div class="dropArea" ondrop="drop('inProgress')" ondragleave="removeHightlight('inProgress')" ondragover="allowDrop(event); hightlight('inProgress')" id="inProgress"></div>
             </div>
             <div class="postIt">
                 <span class="generic_term" id="posttitel">TESTING</span>
-                <div id="testing"></div>
+                <div class="dropArea" ondrop="drop('testing')" ondragleave="removeHightlight('testing')" ondragover="allowDrop(event); hightlight('testing')" id="testing"></div>
             </div>
             <div class="postIt">
                 <span class="generic_term" id="posttitel">DONE</span>
-                <div id="done"></div>
+                <div class="dropArea" ondrop="drop('done')" ondragleave="removeHightlight('done')" ondragover="allowDrop(event); hightlight('done')" id="done"></div>
             </div>
         </div>
     </div>
