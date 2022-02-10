@@ -1,39 +1,39 @@
 let tasks = [{
-    'id': 0,
-    'names': 'Alex',
-    'userImg': '../img/icon plus.png',
-    'category': 'Purchasing',
-    'urgency': 'Middel',
-    'description': 'Description your task...!',
-    'generic_term': 'toDo'
-},
-{
-    'id': 1,
-    'names': 'Willi',
-    'userImg': '../img/willi.jpg',
-    'category': 'Managment',
-    'urgency': 'Hight',
-    'description': 'Description your task...!',
-    'generic_term': 'toDo'
-},
-{
-    'id': 2,
-    'names': 'Georg',
-    'userImg': '../img/georg.jpg',
-    'category': 'Controlling',
-    'urgency': 'Very High',
-    'description': 'Description your task...!',
-    'generic_term': 'toDo'
-},
-{
-    'id': 3,
-    'names': 'Georg',
-    'userImg': '../img/georg.jpg',
-    'category': 'Controlling',
-    'urgency': 'Very High',
-    'description': 'Description your task...!',
-    'generic_term': 'inProgress'
-}
+        'id': 0,
+        'names': 'Alex',
+        'userImg': '../img/icon plus.png',
+        'category': 'Purchasing',
+        'urgency': 'Middel',
+        'description': 'Description your task...!',
+        'generic_term': 'toDo'
+    },
+    {
+        'id': 1,
+        'names': 'Willi',
+        'userImg': '../img/willi.jpg',
+        'category': 'Managment',
+        'urgency': 'Hight',
+        'description': 'Description your task...!',
+        'generic_term': 'toDo'
+    },
+    {
+        'id': 2,
+        'names': 'Georg',
+        'userImg': '../img/georg.jpg',
+        'category': 'Controlling',
+        'urgency': 'Very High',
+        'description': 'Description your task...!',
+        'generic_term': 'toDo'
+    },
+    {
+        'id': 3,
+        'names': 'Georg',
+        'userImg': '../img/georg.jpg',
+        'category': 'Controlling',
+        'urgency': 'Very High',
+        'description': 'Description your task...!',
+        'generic_term': 'inProgress'
+    }
 ];
 
 let draggedElement;
