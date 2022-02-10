@@ -130,5 +130,12 @@ async function createTask() {
     await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
+<<<<<<< HEAD
     renderBacklog();
+=======
+}
+
+async function deleteAllBackendData() {
+    await backend.deleteItem('tasks');
+>>>>>>> 94030347fcfa6389a9b87c7db42b233f30810ae2
 }
