@@ -7,7 +7,7 @@ let users = [{
         'userImage': '../img/AddTask.PNG'
     },
     {
-        'userName': 'Georg',
+        'userName': 'Georg Straßberger',
         'userImage': '../img/georg.jpg'
     }
 ];
@@ -27,6 +27,7 @@ async function init() {
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
 
     loadUsers();
+    renderBacklog();
 }
 
 

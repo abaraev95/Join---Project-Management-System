@@ -10,13 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/addToTask.css">
-    <script src="../js/backlog.js"></script>
+    <script src="../js/mini_backend.js"></script>
     <script src="../js/addToTask.js"></script>
+    <script src="../js/backlog.js"></script>
     <link rel="stylesheet" href="../css/backlog.css">
 
 </head>
 
-<body onload="init(), renderBacklog()">
+<body onload="init()">
 
     <div class="fullscreen">
         <nav>
@@ -28,7 +29,7 @@
         </nav>
 
         <div class="container">
-            <h1>Add Task</h1>
+            <h1>Add Task</h1><button onclick="renderBacklog()">render</button>
             <span>Learning Management System Project</span>
 
             <div class="content-container">
