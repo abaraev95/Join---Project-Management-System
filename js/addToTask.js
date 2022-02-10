@@ -7,7 +7,7 @@ let users = [{
     {
         'userName': 'Willi',
         'fullname': 'Willi Giesbrecht',
-        'userImage': '../img/AddTask.PNG',
+        'userImage': '../img/willi.jpg',
         'userEmail': 'willi.giesbrecht91@web.de'
     },
     {
@@ -35,7 +35,6 @@ async function init() {
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
 
     loadUsers();
-
 }
 
 
@@ -60,7 +59,6 @@ function loadUsers() {
 
 function assignedToUser(username, index) {
     selectedUser = document.getElementById('selected-user').value = username;
-    //  selectedUser.value = username; VAR Global definiert & befehl zusammengefasst. GS
 
     let userInformation = users.filter(t => t['userName'] == username);
 
@@ -132,4 +130,5 @@ async function createTask() {
     await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
+    renderBacklog();
 }
