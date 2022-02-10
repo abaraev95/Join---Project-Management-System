@@ -1,14 +1,20 @@
 let users = [{
         'userName': 'Alex',
-        'userImage': '../img/logo.png'
+        'fullname': 'Alexander Baraev',
+        'userImage': '../img/logo.png',
+        'userEmail': 'alexander.baraev95@googlemail.com',
     },
     {
         'userName': 'Willi',
-        'userImage': '../img/AddTask.PNG'
+        'fullname': 'Willi Giesbrecht',
+        'userImage': '../img/AddTask.PNG',
+        'userEmail': 'willi.giesbrecht91@web.de'
     },
     {
-        'userName': 'Georg Straßberger',
-        'userImage': '../img/georg.jpg'
+        'userName': 'Georg',
+        'fullname': 'Georg Strassberger',
+        'userImage': '../img/georg.jpg',
+        'userEmail': 'georg.strassberger@googlemail.com'
     }
 ];
 
@@ -16,7 +22,9 @@ let backlogTasks = [];
 
 let plusButton = '../img/icon plus.png';
 let selectedUser;
-
+let userFullName;
+let userImage;
+let userEmail;
 
 
 
@@ -53,6 +61,12 @@ function loadUsers() {
 function assignedToUser(username, index) {
     selectedUser = document.getElementById('selected-user').value = username;
     //  selectedUser.value = username; VAR Global definiert & befehl zusammengefasst. GS
+
+    let userInformation = users.filter(t => t['userName'] == username);
+
+    userFullName = userInformation[0]['fullname'];
+    userImage = userInformation[0]['userImage'];
+    userEmail = userInformation[0]['userEmail'];
 
     highlightSelectedUser(index);
 }
@@ -108,7 +122,9 @@ async function createTask() {
         'category': categorySelected,
         'urgency': urgencySelected,
         'description': description,
-        'assignedTo': selectedUser
+        'assignedTo': userFullName,
+        'userImage': userImage,
+        'userEmail': userEmail
     };
     console.log('Task: ', task);
     backlogTasks.push(task);
