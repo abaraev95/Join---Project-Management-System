@@ -10,19 +10,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/addToTask.css">
-    <script src="../js/addToTask.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
     <script src="../js/mini_backend.js"></script>
+    <script src="../js/addToTask.js"></script>
+    <script src="../js/backlog.js"></script>
 </head>
 
-<body onload="loadUsers()">
+<body onload="init(), loadUsers()">
 
     <div class="fullscreen">
         <nav>
             <img src="../img/joinlogo.png">
-            <a href="./board.html">Board</a>
-            <a href="./backlog.html">Backlog</a>
-            <a href="./addToTask.html">Add Task</a>
-            <a href="#">Help</a>
+            <a href="../html/board.html">Board</a>
+            <a href="../html/backlog.html">Backlog</a>
+            <a href="../html/addToTask.html">Add Task</a>
+            <a href="../html/help.html">Help</a>
         </nav>
 
         <div class="container">
@@ -77,11 +79,9 @@
                     </table>
                     <div class="assigned-to-buttons">
                         <button id="cancel-button" onclick="cancelCommand()">CANCEL</button>
-                        <button onclick="createTask()">Create</button>
                         <input id="create-task-button" type="submit" value="CREATE TASK">
                         <input id="selected-user">
                     </div>
-
                     <div id="clearPopup" class="clear-all-inputs">
                         <span>Clear all?</span>
                         <div class="flex-direction-row">
@@ -90,11 +90,10 @@
                         </div>
                     </div>
                 </form>
+                <button onclick="createTask()">Create</button>
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>

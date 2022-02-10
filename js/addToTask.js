@@ -1,13 +1,13 @@
-/*
 setURL('http://gruppe-163.developerakademie.net/smallest_backend_ever');
+
 
 async function init() {
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
 
-    loadUsers();
+    showTast();
 }
-*/
+
 let users = [{
         'userName': 'Alex',
         'userImage': '../img/logo.png'
@@ -49,7 +49,7 @@ function loadUsers() {
 
 function assignedToUser(username, index) {
     selectedUser = document.getElementById('selected-user').value = username;
-    //  selectedUser.value = username;
+    //  selectedUser.value = username; VAR Global definiert & befehl zusammengefasst. GS
 
     highlightSelectedUser(index);
 }
@@ -79,7 +79,7 @@ function clearAll() {
     document.getElementById('selected-user').value = '';
     document.getElementById('category').value = 'Management';
     document.getElementById('urgency').value = 'Low';
-    deleteAllHighlights();
+    // deleteAllHighlights(); Wird schon aufgerufen in createTask - GS
     document.getElementById('clearPopup').style = 'display: none;'
 
 }
@@ -88,7 +88,7 @@ function noClearing() {
     document.getElementById('clearPopup').style = 'display: none;'
 }
 
-function createTask() {
+async function createTask() {
 
     let title = document.getElementById('taskTitle').value;
     let date = document.getElementById('select-date').value;
@@ -109,9 +109,18 @@ function createTask() {
     };
     console.log('Task: ', task);
     backlogTasks.push(task);
-
-
+    await backend.setItem('backlogTasks', JSON.stringify(backlogTasks));
+    init();
     clearAll();
     deleteAllHighlights();
+}
 
+function showTast() {
+    document.getElementById('main').innerHTML = ``;
+    for (let i = 0; i < backlogTasks.length; i++) {
+        const element = backlogTasks[i];
+        document.getElementById('main').innerHTML = `
+        <div>${element}</div>
+        `;
+    }
 }
