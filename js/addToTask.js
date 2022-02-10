@@ -1,13 +1,3 @@
-/*
-setURL('http://gruppe-163.developerakademie.net/smallest_backend_ever');
-
-async function init() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
-
-    loadUsers();
-}
-*/
 let users = [{
         'userName': 'Alex',
         'userImage': '../img/logo.png'
@@ -61,7 +51,7 @@ function loadUsers() {
 
 function assignedToUser(username, index) {
     selectedUser = document.getElementById('selected-user').value = username;
-    //  selectedUser.value = username;
+    //  selectedUser.value = username; VAR Global definiert & befehl zusammengefasst. GS
 
     highlightSelectedUser(index);
 }
@@ -121,8 +111,8 @@ async function createTask() {
     };
     console.log('Task: ', task);
     backlogTasks.push(task);
+
     await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
-
 }
