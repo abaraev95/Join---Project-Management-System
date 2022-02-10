@@ -10,11 +10,11 @@ function renderBacklog() {
             <div class="showColor ${element['category']}">
             </div>
             <div class="userimg">
-                <img src="${element['userimg']}" alt="userlogo">
+                <img src="${element['userImage']}" alt="userlogo">
             </div>
             <div class="userinfo">
                 <span class="username">${element['assignedTo']}</span>
-                <span class="email">${element['useremail']}</span>
+                <span class="email">${element['userEmail']}</span>
             </div>
             <div class="category">
                 <span>${element['category']}</span>
