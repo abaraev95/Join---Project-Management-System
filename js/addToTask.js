@@ -17,6 +17,18 @@ let backlogTasks = [];
 
 let plusButton = '../img/icon plus.png';
 
+
+
+
+async function init() {
+    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
+    await downloadFromServer();
+    backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
+
+    loadUsers();
+}
+
+
 function loadUsers() {
     let assignedUsers = document.getElementById('assigned-to-container');
 
@@ -43,13 +55,13 @@ function assignedToUser(username, index) {
     highlightSelectedUser(index);
 }
 
-function highlightSelectedUser(index){
+function highlightSelectedUser(index) {
     deleteAllHighlights();
     document.getElementById('user-id-' + index).classList.add('highlight-selected-user');
 }
 
 function deleteAllHighlights() {
-    for(let i = 0; i < users.length; i++) {
+    for (let i = 0; i < users.length; i++) {
         document.getElementById('user-id-' + i).classList.remove('highlight-selected-user');
     }
 }
@@ -77,7 +89,7 @@ function noClearing() {
     document.getElementById('clearPopup').style = 'display: none;'
 }
 
-function createTask() {
+async function createTask() {
     let title = document.getElementById('taskTitle').value;
     let date = document.getElementById('select-date').value;
     let category = document.getElementById('category');
@@ -97,6 +109,7 @@ function createTask() {
     };
 
     backlogTasks.push(task);
+    await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
 
