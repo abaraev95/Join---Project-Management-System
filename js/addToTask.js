@@ -133,3 +133,7 @@ async function createTask() {
     clearAll();
     deleteAllHighlights();
 }
+
+async function deleteAllBackendData() {
+    await backend.deleteItem('tasks');
+}
