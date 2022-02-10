@@ -1,0 +1,106 @@
+/*#### ###########*/
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+
+/*##################*/
+
+main {
+    padding: 8px;
+    width: 100%;
+}
+
+.ticked {
+    font-size: 12px;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: lightgrey;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.showColor {
+    width: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.userimg {
+    padding: 4px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userimg img {
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    padding: 2px;
+}
+
+.userinfo {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 200px;
+    margin-right: 32px;
+}
+
+.username {}
+
+.email {
+    color: dodgerblue;
+}
+
+.category {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    width: 100px;
+}
+
+.details {
+    padding: 4px;
+    word-break: normal;
+    width: 300px;
+}
+
+.tablehead {
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.container h1 {
+    margin-bottom: 0;
+}
+
+.container p {
+    margin-top: 0;
+    color: blue;
+}

@@ -1,5 +1,14 @@
-let users = [
-    {
+/*
+setURL('http://gruppe-163.developerakademie.net/smallest_backend_ever');
+
+async function init() {
+    await downloadFromServer();
+    users = JSON.parse(backend.getItem('users')) || [];
+
+    loadUsers();
+}
+*/
+let users = [{
         'userName': 'Alex',
         'userImage': '../img/logo.png'
     },
@@ -9,13 +18,15 @@ let users = [
     },
     {
         'userName': 'Georg',
-        'userImage': '../img/Backlog.PNG'
+        'userImage': '../img/georg.jpg'
     }
 ];
 
 let backlogTasks = [];
 
 let plusButton = '../img/icon plus.png';
+let selectedUser;
+
 
 
 
@@ -49,8 +60,8 @@ function loadUsers() {
 }
 
 function assignedToUser(username, index) {
-    let selectedUser = document.getElementById('selected-user');
-    selectedUser.value = username;
+    selectedUser = document.getElementById('selected-user').value = username;
+    //  selectedUser.value = username;
 
     highlightSelectedUser(index);
 }
@@ -89,7 +100,8 @@ function noClearing() {
     document.getElementById('clearPopup').style = 'display: none;'
 }
 
-async function createTask() {
+function createTask() {
+
     let title = document.getElementById('taskTitle').value;
     let date = document.getElementById('select-date').value;
     let category = document.getElementById('category');
@@ -107,13 +119,10 @@ async function createTask() {
         'description': description,
         'assignedTo': selectedUser
     };
-
+    console.log('Task: ', task);
     backlogTasks.push(task);
     await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
 
 }
-
-
-

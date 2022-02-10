@@ -5,23 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/board.css">
-    <script src="js/board.js"></script>
+    <link rel="stylesheet" href="../css/board.css">
+    <script type ="text/javascript" src="../js/testboard.js"></script>
+
     <title>Document</title>
 </head>
 
-<body>
+<body onload="loadPins()">
 
     <div class="fullscreen">
         <nav>
-            <img src="img/joinlogo.png">
-            <a href="#">Board</a>
-            <a href="#">Backlog</a>
-            <a href="#">Add Task</a>
+            <img src="../img/joinlogo.png">
+            <a href="./board.html">Board</a>
+            <a href="./backlog.html">Backlog</a>
+            <a href="./addToTask.html">Add Task</a>
             <a href="#">Help</a>
         </nav>
+    </div>
+
+    <div class="main_container">
+        <div class="post_container">
+            <div class="postIt">
+                <span class="generic_term" id="posttitel">TO DO</span>
+                <div class="dropArea" ondrop="drop('toDo')" ondragleave="removeHightlight('toDo')" ondragover="allowDrop(event); hightlight('toDo')" id="toDo"></div>
+            </div>
+            <div class="postIt">
+                <span class="generic_term" id="posttitel">IN PROGRESS</span>
+                <div class="dropArea" ondrop="drop('inProgress')" ondragleave="removeHightlight('inProgress')" ondragover="allowDrop(event); hightlight('inProgress')" id="inProgress"></div>
+            </div>
+            <div class="postIt">
+                <span class="generic_term" id="posttitel">TESTING</span>
+                <div class="dropArea" ondrop="drop('testing')" ondragleave="removeHightlight('testing')" ondragover="allowDrop(event); hightlight('testing')" id="testing"></div>
+            </div>
+            <div class="postIt">
+                <span class="generic_term" id="posttitel">DONE</span>
+                <div class="dropArea" ondrop="drop('done')" ondragleave="removeHightlight('done')" ondragover="allowDrop(event); hightlight('done')" id="done"></div>
+            </div>
+        </div>
     </div>
 </body>
 
