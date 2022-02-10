@@ -35,7 +35,7 @@ async function init() {
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
 
     loadUsers();
-    renderBacklog();
+
 }
 
 
