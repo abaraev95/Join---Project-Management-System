@@ -5,10 +5,6 @@ function renderBacklog() {
 
         console.log('element: ', element);
 
-        if (element['category'] == 'R&D') {
-            document.getElementById(i).classList.add('green');
-        }
-
         document.getElementById('main').innerHTML += `
         <div class="ticked">
             <div id="${i}" class="showColor">
@@ -28,6 +24,18 @@ function renderBacklog() {
             </div>
         </div>
         `;
+        if (backlogTasks[i]['category'] == 'R&D') {
+            document.getElementById(i).classList.add('green');
+        }
+        if (backlogTasks[i]['category'] == 'Purchasing') {
+            document.getElementById(i).classList.add('red');
+        }
+        if (backlogTasks[i]['category'] == 'Management') {
+            document.getElementById(i).classList.add('blue');
+        }
+        if (backlogTasks[i]['category'] == 'Controlling') {
+            document.getElementById(i).classList.add('yellow');
+        }
     }
 }
 
