@@ -5,9 +5,13 @@ function renderBacklog() {
 
         console.log('element: ', element);
 
+        if (element['category'] == 'R&D') {
+            document.getElementById(i).classList.add('green');
+        }
+
         document.getElementById('main').innerHTML += `
         <div class="ticked">
-            <div class="showColor ${element['category']}">
+            <div id="${i}" class="showColor">
             </div>
             <div class="userimg">
                 <img src="${element['userImage']}" alt="userlogo">
