@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 let boardArray = []; // Objecte zum Bord übergeben.
 
+=======
+let boardArray = [];
+>>>>>>> 60912a009515556d3ffe3562edc284589a6e3511
 
 function renderBacklog() {
     document.getElementById('main').innerHTML = ``;
@@ -10,7 +14,7 @@ function renderBacklog() {
 
         document.getElementById('main').innerHTML += `
         <div class="ticked">
-            <div id="${i}" class="showColor">
+            <div id="${i}" class="showColor" onclick="addToBoard(${i})">
             </div>
             <div class="userimg">
                 <img src="${element['userImage']}" alt="userlogo">
@@ -25,6 +29,7 @@ function renderBacklog() {
             <div class="details">
                 <span>${element['description']}</span>
             </div>
+        
         </div>
         `;
         if (backlogTasks[i]['category'] == 'R&D') {
@@ -42,7 +47,28 @@ function renderBacklog() {
     }
 }
 
+async function addToBoard(index) {
+    const element = backlogTasks[index];
 
+    let task = {
+        'title': element['title'],
+        'date': element['date']
+        /*
+        'category': categorySelected,
+        'urgency': urgencySelected,
+        'description': description,
+        'assignedTo': userFullName,
+        'userImage': userImage,
+        'userEmail': userEmail
+        */
+    };
+
+    boardArray.push(task);
+
+    await backend.setItem('boardTasks', JSON.stringify(boardArray));
+
+    backlogTasks.splice(index, 1);
+}
 /*
 setURL('http://georg-strassberger.developerakademie.net/smallest_backend_ever');
 
