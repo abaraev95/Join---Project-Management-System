@@ -30,7 +30,7 @@ let userEmail;
 
 
 async function init() {
-    setURL('http://gruppe-163.developerakademie.com/Alex/smallest_backend_ever-master');
+    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
     await downloadFromServer();
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
     boardArray = JSON.parse(backend.getItem('boardTasks')) || []; // Vom Backlog zum Board .
