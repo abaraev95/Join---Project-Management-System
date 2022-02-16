@@ -49,12 +49,6 @@ function loadUsers() {
             </div>
         `;
     }
-
-    /*  PLUS BUTTON
-    assignedUsers.innerHTML += `
-        <img src='${plusButton}'>
-    `;
-    */
 }
 
 function assignedToUser(username, index) {

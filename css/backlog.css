@@ -41,12 +41,20 @@ main {
     border-top-left-radius: 8px;
 }
 
+.showColor:hover {
+    cursor: pointer;
+}
+
 .userimg {
     padding: 4px;
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.userimg:hover {
+    cursor: pointer;
 }
 
 .userimg img {
