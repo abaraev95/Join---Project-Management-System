@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 let boardArray = []; // Objecte zum Bord übergeben.
 
-=======
-let boardArray = [];
->>>>>>> 60912a009515556d3ffe3562edc284589a6e3511
 
 function renderBacklog() {
     document.getElementById('main').innerHTML = ``;
@@ -16,7 +12,7 @@ function renderBacklog() {
         <div class="ticked">
             <div id="${i}" class="showColor" onclick="addToBoard(${i})">
             </div>
-            <div class="userimg">
+            <div class="userimg" onclick="deleteFromBacklog(${i})">
                 <img src="${element['userImage']}" alt="userlogo">
             </div>
             <div class="userinfo">
@@ -52,57 +48,24 @@ async function addToBoard(index) {
 
     let task = {
         'title': element['title'],
-        'date': element['date']
-        /*
-        'category': categorySelected,
-        'urgency': urgencySelected,
-        'description': description,
-        'assignedTo': userFullName,
-        'userImage': userImage,
-        'userEmail': userEmail
-        */
+        'date': element['date'],
+        'category': element['category'],
+        'urgency': element['urgency'],
+        'description': element['tidescriptionle'],
+        'assignedTo': element['assignedTo'],
+        'userImage': element['userImage'],
+        'userEmail': element['userEmail']
     };
 
     boardArray.push(task);
 
     await backend.setItem('boardTasks', JSON.stringify(boardArray));
 
-    backlogTasks.splice(index, 1);
+    deleteFromBacklog(index);
 }
-/*
-setURL('http://georg-strassberger.developerakademie.net/smallest_backend_ever');
 
-let backlogArray = [{
-        'color': 'green',
-        'userimg': '../img/georg.jpg',
-        'username': 'Georg Straßberger',
-        'useremail': 'georg.strassberger@gmail.com',
-        'category': 'Marketing',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    },
-    {
-        'color': 'red',
-        'userimg': './img/user/element-fire.png',
-        'username': 'Max Mustermann',
-        'useremail': 'm.maustermann@gmail.com',
-        'category': 'Sale',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    },
-    {
-        'color': 'yellow',
-        'userimg': './img/user/element-electro.png',
-        'username': 'Hans P. Bexter',
-        'useremail': 'hp.bexter@gmx.de',
-        'category': 'Design',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    },
-    {
-        'color': 'blue',
-        'userimg': './img/user/element-water.png',
-        'username': 'Julia Nurso',
-        'useremail': 'julia.nurso@hotmail.de',
-        'category': 'Product',
-        'details': 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    }
-];
-*/
+
+function deleteFromBacklog(index) {
+    backlogTasks.splice(index, 1);
+    renderBacklog();
+}
