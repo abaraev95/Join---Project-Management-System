@@ -1,3 +1,6 @@
+let boardArray = []; // Objecte zum Bord übergeben.
+
+
 function renderBacklog() {
     document.getElementById('main').innerHTML = ``;
     for (let i = 0; i < backlogTasks.length; i++) {

@@ -30,11 +30,11 @@ let userEmail;
 
 
 async function init() {
-    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
+    setURL('http://gruppe-163.developerakademie.com/Alex/smallest_backend_ever-master');
     await downloadFromServer();
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
+    boardArray = JSON.parse(backend.getItem('boardTasks')) || []; // Vom Backlog zum Board .
 
-    loadUsers();
 }
 
 
@@ -124,10 +124,10 @@ async function createTask() {
         'userImage': userImage,
         'userEmail': userEmail
     };
-    console.log('Task: ', task);
+    console.log('TaskvomALEX: ', task);
     backlogTasks.push(task);
 
-    await backend.setItem('tasks', JSON.stringify(backlogTasks));
+    await backend.setItem('tasks123', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
 }
