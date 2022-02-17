@@ -40,7 +40,8 @@ nav a {
     width: 400px;
     border-radius: 4px;
     text-align: center;
-    margin: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .generic_term {
@@ -66,7 +67,7 @@ nav a {
 }
 
 .dropArea {
-    height: 100%;
+    min-height: 95%;
 }
 
 .dropAreaHighlight {

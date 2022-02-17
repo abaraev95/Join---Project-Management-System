@@ -1,4 +1,4 @@
-let tasks = [{
+/*let tasks = [{
         'id': 0,
         'names': 'Alex',
         'userImg': '../img/icon plus.png',
@@ -34,12 +34,12 @@ let tasks = [{
         'description': 'Description your task...!',
         'generic_term': 'inProgress'
     }
-];
+];*/
 
 let draggedElement;
 
 function loadPins() {
-    let toDo = tasks.filter(t => t['generic_term'] == 'toDo');
+    let toDo = boardArray.filter(t => t['generic_term'] == 'toDo');
 
     document.getElementById('toDo').innerHTML = "";
 
@@ -48,7 +48,7 @@ function loadPins() {
         document.getElementById('toDo').innerHTML += generateTodoHTML(task);
     }
 
-    let inProgress = tasks.filter(t => t['generic_term'] == 'inProgress');
+    let inProgress = boardArray.filter(t => t['generic_term'] == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = "";
 
@@ -57,7 +57,7 @@ function loadPins() {
         document.getElementById('inProgress').innerHTML += generateTodoHTML(task);
     }
 
-    let testing = tasks.filter(t => t['generic_term'] == 'testing');
+    let testing = boardArray.filter(t => t['generic_term'] == 'testing');
 
     document.getElementById('testing').innerHTML = "";
 
@@ -66,7 +66,7 @@ function loadPins() {
         document.getElementById('testing').innerHTML += generateTodoHTML(task);
     }
 
-    let done = tasks.filter(t => t['generic_term'] == 'done');
+    let done = boardArray.filter(t => t['generic_term'] == 'done');
 
     document.getElementById('done').innerHTML = "";
 
@@ -107,3 +107,4 @@ function hightlight(id) {
 function removeHightlight(id) {
     document.getElementById(id).classList.remove('dropAreaHighlight');
 }
+

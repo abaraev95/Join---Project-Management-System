@@ -35,6 +35,7 @@ async function init() {
     backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
     boardArray = JSON.parse(backend.getItem('boardTasks')) || []; // Vom Backlog zum Board .
 
+    loadUsers();
 }
 
 
@@ -120,11 +121,12 @@ async function createTask() {
     console.log('TaskvomALEX: ', task);
     backlogTasks.push(task);
 
-    await backend.setItem('tasks123', JSON.stringify(backlogTasks));
+    await backend.setItem('tasks', JSON.stringify(backlogTasks));
     clearAll();
     deleteAllHighlights();
 }
 
 async function deleteAllBackendData() {
     await backend.deleteItem('tasks');
+    await backend.deleteItem('boardTasks');
 }
