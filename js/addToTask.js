@@ -74,7 +74,6 @@ function deleteAllHighlights() {
     }
 }
 
-
 function cancelCommand() {
     let popup = document.getElementById('clearPopup');
 
