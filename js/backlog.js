@@ -1,8 +1,13 @@
 let boardArray = []; // Objecte zum Bord übergeben.
 
 
-function renderBacklog() {
-    document.getElementById('main').innerHTML = ``;
+async function renderBacklog() {
+    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
+    await downloadFromServer();
+    backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
+    boardArray = JSON.parse(backend.getItem('boardTasks')) || []; // Vom Backlog zum Board .
+
+    document.getElementById('main').innerHTML = '';
     for (let i = 0; i < backlogTasks.length; i++) {
         const element = backlogTasks[i];
 
@@ -26,7 +31,7 @@ function renderBacklog() {
                 <span>${element['description']}</span>
             </div>
         
-        </div>
+        </div> 
         `;
         if (backlogTasks[i]['category'] == 'R&D') {
             document.getElementById(i).classList.add('green');
@@ -65,7 +70,9 @@ async function addToBoard(index) {
 }
 
 
-function deleteFromBacklog(index) {
+async function deleteFromBacklog(index) {
     backlogTasks.splice(index, 1);
+    await backend.deleteItem('tasks');
+    await backend.setItem('tasks', JSON.stringify(backlogTasks));
     renderBacklog();
 }
