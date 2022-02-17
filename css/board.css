@@ -113,11 +113,22 @@ nav a {
     padding: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border: 2px solid grey;
     border-radius: 16px;
     background-color: lightgray;
     margin: 10px 4px 0px 4px;
+}
+
+.pinNames button {
+    border-radius: 100%;
+    background-color: rgb(167, 167, 167);
+    font-weight: 700;
+    border: 2px solid grey;
+}
+
+.pinNames button:hover {
+    background-color: rgb(87, 87, 87);
 }
 
 .pinInfo {
@@ -130,4 +141,43 @@ nav a {
     background-color: lightgray;
     margin: 0px 6px 10px 6px;
     min-height: 130px;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        display: flex;
+        width: 100vw;
+        height: 50px;
+        background-color: #1e3190;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px;
+        position: unset;
+        flex-direction: unset;
+    }
+
+    nav img {
+        position: unset;
+        width: 30px;
+
+    }
+
+    .fullscreen {
+        display: unset;
+    }
+
+    .main_container {
+        position: unset;
+        height: 100vh;
+    }
+
+    .post_container {
+        display: unset;
+    }
+
+    .postIt {
+        width: auto;
+        margin-top: 30px;
+        height: 630px;
+    }
 }

@@ -24,21 +24,17 @@
         'urgency': 'Very High',
         'description': 'Description your task...!',
         'generic_term': 'toDo'
-    },
-    {
-        'id': 3,
-        'names': 'Georg',
-        'userImg': '../img/georg.jpg',
-        'category': 'Controlling',
-        'urgency': 'Very High',
-        'description': 'Description your task...!',
-        'generic_term': 'inProgress'
     }
 ];*/
 
 let draggedElement;
 
-function loadPins() {
+async function loadPins() {
+    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
+    await downloadFromServer();
+    backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
+    boardArray = JSON.parse(backend.getItem('boardTasks')) || []; 
+
     let toDo = boardArray.filter(t => t['generic_term'] == 'toDo');
 
     document.getElementById('toDo').innerHTML = "";
@@ -78,10 +74,10 @@ function loadPins() {
 
 function generateTodoHTML(task) {
     return `<div draggable="true" ondragstart="startDragging(${task['id']})" id="pinContainer">
-            	<span class="pinNames">${task['names']}</span>
+                <span class="pinNames">${task['assignedTo']}<button>X</button></span>   
                 <div class="pinInfo">
                     <span>${task['description']}</span>
-                    <img src='${task['userImg']}'>
+                    <img src='${task['userImage']}'>
                 </div>
 
             </div>`;
@@ -96,7 +92,7 @@ function allowDrop(ev) {
 }
 
 function drop(generic_term) {
-    tasks[draggedElement]['generic_term'] = generic_term;
+    boardArray[draggedElement]['generic_term'] = generic_term;
     loadPins();
 }
 
