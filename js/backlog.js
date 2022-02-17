@@ -43,10 +43,11 @@ async function addToBoard(index) {
         'date': element['date'],
         'category': element['category'],
         'urgency': element['urgency'],
-        'description': element['tidescriptionle'],
+        'description': element['description'],
         'assignedTo': element['assignedTo'],
         'userImage': element['userImage'],
-        'userEmail': element['userEmail']
+        'userEmail': element['userEmail'],
+        'generic_term': 'toDo'
     };
 
     boardArray.push(task);
