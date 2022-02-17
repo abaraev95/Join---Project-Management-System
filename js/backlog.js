@@ -1,6 +1,5 @@
 let boardArray = []; // Objecte zum Bord übergeben.
 
-
 async function renderBacklog() {
     setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
     await downloadFromServer();
@@ -43,12 +42,13 @@ async function addToBoard(index) {
         'date': element['date'],
         'category': element['category'],
         'urgency': element['urgency'],
-        'description': element['tidescriptionle'],
+        'description': element['description'],
         'assignedTo': element['assignedTo'],
         'userImage': element['userImage'],
-        'userEmail': element['userEmail']
+        'userEmail': element['userEmail'],
+        'id': new Date().getTime(),
+        'generic_term': 'toDo'
     };
-
     boardArray.push(task);
 
     await backend.setItem('boardTasks', JSON.stringify(boardArray));
