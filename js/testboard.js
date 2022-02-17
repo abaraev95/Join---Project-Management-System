@@ -38,7 +38,12 @@
 
 let draggedElement;
 
-function loadPins() {
+async function loadPins() {
+    setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
+    await downloadFromServer();
+    backlogTasks = JSON.parse(backend.getItem('tasks')) || [];
+    boardArray = JSON.parse(backend.getItem('boardTasks')) || []; 
+
     let toDo = boardArray.filter(t => t['generic_term'] == 'toDo');
 
     document.getElementById('toDo').innerHTML = "";
@@ -78,7 +83,7 @@ function loadPins() {
 
 function generateTodoHTML(task) {
     return `<div draggable="true" ondragstart="startDragging(${task['id']})" id="pinContainer">
-            	<span class="pinNames">${task['names']}</span>
+                <span class="pinNames">${task['names']}<button>X</button></span>   
                 <div class="pinInfo">
                     <span>${task['description']}</span>
                     <img src='${task['userImg']}'>
