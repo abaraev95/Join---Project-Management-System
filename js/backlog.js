@@ -11,8 +11,6 @@ async function renderBacklog() {
     for (let i = 0; i < backlogTasks.length; i++) {
         const element = backlogTasks[i];
 
-        console.log('element: ', element);
-
         document.getElementById('main').innerHTML += `
         <div class="ticked">
             <div id="${i}" class="showColor" onclick="addToBoard(${i})">
@@ -33,18 +31,7 @@ async function renderBacklog() {
         
         </div> 
         `;
-        if (backlogTasks[i]['category'] == 'R&D') {
-            document.getElementById(i).classList.add('green');
-        }
-        if (backlogTasks[i]['category'] == 'Purchasing') {
-            document.getElementById(i).classList.add('red');
-        }
-        if (backlogTasks[i]['category'] == 'Management') {
-            document.getElementById(i).classList.add('blue');
-        }
-        if (backlogTasks[i]['category'] == 'Controlling') {
-            document.getElementById(i).classList.add('yellow');
-        }
+        checkForCategory(i);
     }
 }
 
@@ -75,4 +62,19 @@ async function deleteFromBacklog(index) {
     await backend.deleteItem('tasks');
     await backend.setItem('tasks', JSON.stringify(backlogTasks));
     renderBacklog();
+}
+
+function checkForCategory(i) {
+    if (backlogTasks[i]['category'] == 'R&D') {
+        document.getElementById(i).classList.add('green');
+    }
+    if (backlogTasks[i]['category'] == 'Purchasing') {
+        document.getElementById(i).classList.add('red');
+    }
+    if (backlogTasks[i]['category'] == 'Management') {
+        document.getElementById(i).classList.add('blue');
+    }
+    if (backlogTasks[i]['category'] == 'Controlling') {
+        document.getElementById(i).classList.add('yellow');
+    }
 }

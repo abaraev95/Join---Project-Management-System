@@ -36,9 +36,13 @@ main {
 }
 
 .showColor {
-    width: 8px;
+    width: 16px;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
+}
+
+.showColor:hover {
+    cursor: pointer;
 }
 
 .userimg {
@@ -47,6 +51,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.userimg:hover {
+    cursor: pointer;
 }
 
 .userimg img {
