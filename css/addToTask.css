@@ -192,3 +192,27 @@ textarea {
     flex-direction: row;
     gap: 20px;
 }
+
+
+/*####################################################*/
+
+@media (max-width: 1000px) {
+    nav {
+        display: flex;
+        width: 100vw;
+        height: 50px;
+        background-color: #1e3190;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px;
+        position: unset;
+        flex-direction: unset;
+    }
+    nav img {
+        position: unset;
+        width: 30px;
+    }
+    .fullscreen {
+        display: unset;
+    }
+}

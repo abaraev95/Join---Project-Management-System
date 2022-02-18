@@ -14,8 +14,7 @@
     <script src="../js/mini_backend.js"></script>
     <script src="../js/addToTask.js"></script>
     <script src="../js/backlog.js"></script>
-
-
+    <script src="../js/testboard.js"></script>
 </head>
 
 <body onload="renderBacklog()">
@@ -30,7 +29,7 @@
         </nav>
 
         <div class="container">
-            <h1>Add Task</h1><button onclick="renderBacklog()">render</button>
+            <h1>Backlog</h1>
             <span>Learning Management System Project</span>
 
             <div class="content-container">
@@ -40,30 +39,26 @@
                     <span>DETAILS</span>
                 </div>
                 <div id="main">
-                    <!--
                     <div class="ticked">
-                        <div class="showColor">
+                        <div id="${i}" class="showColor" onclick="addToBoard(${i})">
                         </div>
-                        <div class="userimg">
-                            <img src="./img/user/georg.jpg" alt="userlogo">
+                        <div class="userimg" onclick="deleteFromBacklog(${i})">
+                            <img src="${element['userImage']}" alt="userlogo">
                         </div>
                         <div class="userinfo">
-                            <span class="username">Georg Straßberger</span>
-                            <span class="email">georg.strassberger@gmail.com</span>
+                            <span class="username">${element['assignedTo']}</span>
+                            <span class="email">${element['userEmail']}</span>
                         </div>
                         <div class="category">
-                            <span>Marketing</span>
+                            <span>${element['category']}</span>
                         </div>
                         <div class="details">
-                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span>
+                            <span>${element['description']}</span>
                         </div>
                     </div>
-                    -->
                 </div>
             </div>
         </div>
-
-
 </body>
 
 </html>

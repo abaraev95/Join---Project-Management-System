@@ -39,6 +39,7 @@ async function addToBoard(index) {
     const element = backlogTasks[index];
 
     let task = {
+        'id': index,
         'title': element['title'],
         'date': element['date'],
         'category': element['category'],
