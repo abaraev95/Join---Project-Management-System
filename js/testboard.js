@@ -91,8 +91,17 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function drop(generic_term) {
-    boardArray[draggedElement]['generic_term'] = generic_term;
+async function drop(generic_term) {
+    
+    let index;
+    for(let i = 0; i < boardArray.length; i++) {
+        if(boardArray[i]['id'] === draggedElement){
+            index = i;
+            break;
+        }
+    }
+    boardArray[index]['generic_term'] = generic_term;
+    await backend.setItem('boardTasks', JSON.stringify(boardArray));
     loadPins();
 }
 

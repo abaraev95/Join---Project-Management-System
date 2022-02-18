@@ -1,6 +1,5 @@
 let boardArray = []; // Objecte zum Bord übergeben.
 
-
 async function renderBacklog() {
     setURL('http://gruppe-163.developerakademie.net/Alex/smallest_backend_ever-master');
     await downloadFromServer();
@@ -13,9 +12,9 @@ async function renderBacklog() {
 
         document.getElementById('main').innerHTML += `
         <div class="ticked">
-            <div id="${i}" class="showColor" onclick="addToBoard(${i})">
+            <div id="${i}" class="showColor">
             </div>
-            <div class="userimg" onclick="deleteFromBacklog(${i})">
+            <div class="userimg">
                 <img src="${element['userImage']}" alt="userlogo">
             </div>
             <div class="userinfo">
@@ -28,7 +27,10 @@ async function renderBacklog() {
             <div class="details">
                 <span>${element['description']}</span>
             </div>
-        
+            <div class="btn-frame">
+                <img src="../img/icon/plus-black-16.png"  onclick="addToBoard(${i})" alt="PLUS">
+                <img src="../img/icon/delete-black-16.png" onclick="deleteFromBacklog(${i})" alt="DELETE">
+            </div>        
         </div> 
         `;
         checkForCategory(i);
@@ -39,7 +41,6 @@ async function addToBoard(index) {
     const element = backlogTasks[index];
 
     let task = {
-        'id': index,
         'title': element['title'],
         'date': element['date'],
         'category': element['category'],
@@ -48,9 +49,9 @@ async function addToBoard(index) {
         'assignedTo': element['assignedTo'],
         'userImage': element['userImage'],
         'userEmail': element['userEmail'],
+        'id': new Date().getTime(),
         'generic_term': 'toDo'
     };
-
     boardArray.push(task);
 
     await backend.setItem('boardTasks', JSON.stringify(boardArray));
