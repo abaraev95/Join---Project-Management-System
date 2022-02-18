@@ -25,6 +25,7 @@ main {
 }
 
 .ticked {
+    justify-content: space-between;
     font-size: 12px;
     display: flex;
     height: 60px;
@@ -33,6 +34,18 @@ main {
     border-radius: 8px;
     margin-bottom: 8px;
     box-sizing: border-box;
+}
+
+.btn-frame {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 40px;
+}
+
+.btn-frame img:hover {
+    cursor: pointer;
 }
 
 .showColor {
