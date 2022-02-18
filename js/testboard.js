@@ -92,8 +92,7 @@ function allowDrop(ev) {
 }
 
 async function drop(generic_term) {
-    //boardArray[draggedElement]['generic_term'] = generic_term;
-    //let done = boardArray.filter(t => t['id'] == draggedElement); // Nach ID im boardArray Filtern um auf den richtigen JSON Eintrag zu kommen
+    
     let index;
     for(let i = 0; i < boardArray.length; i++) {
         if(boardArray[i]['id'] === draggedElement){
