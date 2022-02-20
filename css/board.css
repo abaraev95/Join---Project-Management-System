@@ -36,6 +36,7 @@ nav a {
 }
 
 .postIt {
+    overflow: hidden;
     background-color: rgb(221, 221, 245);
     width: 400px;
     border-radius: 4px;
@@ -141,6 +142,10 @@ nav a {
     background-color: lightgray;
     margin: 0px 6px 10px 6px;
     min-height: 130px;
+}
+
+.buttonsDiv {
+    display: flex;
 }
 
 @media (max-width: 1000px) {

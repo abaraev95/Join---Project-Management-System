@@ -41,7 +41,7 @@ async function loadPins() {
 
     for (let i = 0; i < toDo.length; i++) {
         const task = toDo[i];
-        document.getElementById('toDo').innerHTML += generateTodoHTML(task);
+        document.getElementById('toDo').innerHTML += generateTodoHTML(task,i);
     }
 
     let inProgress = boardArray.filter(t => t['generic_term'] == 'inProgress');
@@ -50,7 +50,7 @@ async function loadPins() {
 
     for (let i = 0; i < inProgress.length; i++) {
         const task = inProgress[i];
-        document.getElementById('inProgress').innerHTML += generateTodoHTML(task);
+        document.getElementById('inProgress').innerHTML += generateTodoHTML(task,i);
     }
 
     let testing = boardArray.filter(t => t['generic_term'] == 'testing');
@@ -59,7 +59,7 @@ async function loadPins() {
 
     for (let i = 0; i < testing.length; i++) {
         const task = testing[i];
-        document.getElementById('testing').innerHTML += generateTodoHTML(task);
+        document.getElementById('testing').innerHTML += generateTodoHTML(task,i);
     }
 
     let done = boardArray.filter(t => t['generic_term'] == 'done');
@@ -68,13 +68,13 @@ async function loadPins() {
 
     for (let i = 0; i < done.length; i++) {
         const task = done[i];
-        document.getElementById('done').innerHTML += generateTodoHTML(task);
+        document.getElementById('done').innerHTML += generateTodoHTML(task,i);
     }
 }
 
 function generateTodoHTML(task) {
     return `<div draggable="true" ondragstart="startDragging(${task['id']})" id="pinContainer">
-                <span class="pinNames">${task['assignedTo']}<button>X</button></span>   
+                <span class="pinNames">${task['assignedTo']}<div class="buttonsDiv"><button onclick="swap_generic_term(${task['id']})">+</button><button onclick="delete_task(${task['id']})">X</button></div></span>   
                 <div class="pinInfo">
                     <span>${task['description']}</span>
                     <img src='${task['userImage']}'>
@@ -113,3 +113,16 @@ function removeHightlight(id) {
     document.getElementById(id).classList.remove('dropAreaHighlight');
 }
 
+async function delete_task(task) {
+        let term = task;
+        let position = boardArray.indexOf();
+        console.log('delete task:', position);
+        /*boardArray.splice(position, 1);
+        await backend.deleteItem('backlogTasks');
+        await backend.setItem('backlogTasks', JSON.stringify(backlogTasks));
+        loadPins();*/
+}
+
+async function swap_generic_term(){ 
+
+}
